@@ -4,3 +4,13 @@ dash
 gunicorn==19.7.1
 cython
 requests
+dash-bootstrap-components
+pickle
+copy
+pathlib
+urllib.request
+math
+datetime
+dash.dependencies
+dash_bootstrap_templates
+
