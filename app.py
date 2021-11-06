@@ -104,14 +104,14 @@ layout = dict(
 # Create main layout sections
 logo = dbc.Row(
      dbc.Col(children=[
-            html.Div(style={"width": 20, "height": 75}),
+            html.Div(style={"height": 75}),
             html.Img(src="http://www.laredopetro.com/media/28917/logo.png")
      ],style={'textAlign': 'center'}),
 )
 header = dbc.Row(
     [
     dbc.Col(children=[
-            html.Div(style={"height": 75, "width": 20}),
+            #html.Div(style={"height": 75, "width": 20}),
             html.H3("Production Dashboard Example", className="text-center"),
             html.H5("Austin Caudill", className="text-center")
     ]),
