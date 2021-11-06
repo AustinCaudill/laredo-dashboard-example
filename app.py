@@ -105,7 +105,7 @@ layout = dict(
 logo = dbc.Row(
      dbc.Col(children=[
             html.Div(style={"height": 75}),
-            html.Img(src="http://www.laredopetro.com/media/28917/logo.png")
+            html.Img(src="https://www.laredopetro.com/media/28917/logo.png")
      ],style={'textAlign': 'center'}),
 )
 header = dbc.Row(
