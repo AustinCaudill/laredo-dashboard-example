@@ -33,14 +33,14 @@ from controls import COUNTIES, WELL_STATUSES, WELL_TYPES, WELL_COLORS
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
 
-external_stylesheets = [dbc.themes.SLATE] # Change theme here. Must be in all-caps
+external_stylesheets = [dbc.themes.BOOTSTRAP] # Change theme here. Must be in all-caps
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width"}],
     external_stylesheets=external_stylesheets,
 )
 
-load_figure_template("slate")
+load_figure_template("bootstrap")
 
 server = app.server
 
@@ -105,7 +105,7 @@ layout = dict(
 logo = dbc.Row(
      dbc.Col(children=[
             html.Div(style={"height": 75}),
-            html.Img(src="https://www.laredopetro.com/media/28917/logo.png")
+            html.Img(src="http://www.laredopetro.com/media/28917/logo.png")
      ],style={'textAlign': 'center'}),
 )
 header = dbc.Row(
