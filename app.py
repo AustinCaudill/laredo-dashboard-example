@@ -33,14 +33,14 @@ from controls import COUNTIES, WELL_STATUSES, WELL_TYPES, WELL_COLORS
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
 
-external_stylesheets = [dbc.themes.BOOTSTRAP] # Change theme here. Must be in all-caps
+external_stylesheets = [dbc.themes.SUPERHERO] # Change theme here. Must be in all-caps
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width"}],
     external_stylesheets=external_stylesheets,
 )
 
-load_figure_template("bootstrap")
+load_figure_template("SUPERHERO")
 
 server = app.server
 
@@ -105,13 +105,13 @@ layout = dict(
 logo = dbc.Row(
      dbc.Col(children=[
             html.Div(style={"height": 75}),
-            html.Img(src=app.get_asset_url('logo.png'))
+            html.Img(src=app.get_asset_url('logo1.png'))
      ],style={'textAlign': 'center'}),
 )
 header = dbc.Row(
     [
     dbc.Col(children=[
-            #html.Div(style={"height": 75, "width": 20}),
+            html.Div(style={"height": 25, "width": 20}),
             html.H3("Production Dashboard Example", className="text-center"),
             html.H5("Austin Caudill", className="text-center")
     ]),
@@ -170,7 +170,7 @@ control_panel = dbc.Card(
             value=list(WELL_TYPES.keys()),
         ),
     ],
-    className="shadow-sm bg-light p-4 mb-2",
+    className="shadow-sm   p-4 mb-2",
     style={"minWidth": "250px"},
     id="cross-filter-options",
 )
@@ -179,22 +179,22 @@ info_container = dbc.CardGroup(
     [
         dbc.Card(
             [html.H6(id="well_text"), html.P("No. of Wells")],
-            className="p-4 mr-2 shadow-sm bg-light",
+            className="p-4 mr-2 shadow-sm  ",
             id="wells",
         ),
         dbc.Card(
             [html.H6(id="gasText"), html.P("Gas")],
-            className="p-4 mr-2 shadow-sm bg-light",
+            className="p-4 mr-2 shadow-sm  ",
             id="gas",
         ),
         dbc.Card(
             [html.H6(id="oilText"), html.P("Oil")],
-            className="p-4 mr-2 shadow-sm bg-light",
+            className="p-4 mr-2 shadow-sm  ",
             id="oil",
         ),
         dbc.Card(
             [html.H6(id="waterText"), html.P("Water")],
-            className="p-4 mr-4 shadow-sm bg-light",
+            className="p-4 mr-4 shadow-sm  ",
             id="water",
         ),
     ]
@@ -250,7 +250,7 @@ app.layout = dbc.Container(
         ),
     ],
     fluid=True,
-    className="bg-light",
+    className=" ",
 )
 
 
