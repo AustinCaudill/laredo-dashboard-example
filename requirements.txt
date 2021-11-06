@@ -1,15 +1,9 @@
 plotly
-pandas==1.3.0
+pandas
 dash
-gunicorn==19.7.1
+gunicorn
 cython
-requests
 dash-bootstrap-components
-copy
-pathlib
-urllib.request
-math
-datetime
 dash.dependencies
 dash_bootstrap_templates
 
