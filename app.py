@@ -71,7 +71,7 @@ points = pickle.load(open(DATA_PATH.joinpath("points.pkl"), "rb"))
 # Load data
 df = pd.read_csv(
     "https://github.com/plotly/datasets/raw/master/dash-sample-apps/dash-oil-and-gas/data/wellspublic.csv",
-    low_memory=True,
+    low_memory=False,
 )
 df["Date_Well_Completed"] = pd.to_datetime(df["Date_Well_Completed"])
 df = df[df["Date_Well_Completed"] > dt.datetime(1960, 1, 1)]
@@ -105,7 +105,7 @@ layout = dict(
 logo = dbc.Row(
      dbc.Col(children=[
             html.Div(style={"height": 75}),
-            html.Img(src="http://www.laredopetro.com/media/28917/logo.png")
+            html.Img(src=app.get_asset_url('logo.png'))
      ],style={'textAlign': 'center'}),
 )
 header = dbc.Row(
