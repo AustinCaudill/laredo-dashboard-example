@@ -4,6 +4,5 @@ dash
 gunicorn
 cython
 dash-bootstrap-components
-dash.dependencies
-dash_bootstrap_templates
+dash-bootstrap-templates
 
