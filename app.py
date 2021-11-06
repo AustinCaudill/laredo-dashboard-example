@@ -71,7 +71,7 @@ points = pickle.load(open(DATA_PATH.joinpath("points.pkl"), "rb"))
 # Load data
 df = pd.read_csv(
     "https://github.com/plotly/datasets/raw/master/dash-sample-apps/dash-oil-and-gas/data/wellspublic.csv",
-    low_memory=False,
+    low_memory=True,
 )
 df["Date_Well_Completed"] = pd.to_datetime(df["Date_Well_Completed"])
 df = df[df["Date_Well_Completed"] > dt.datetime(1960, 1, 1)]
