@@ -9,4 +9,4 @@ I have built upon their work to make this app compatible with Dash 2.0 and dash-
 
 ----
 ----
-![image](https://user-images.githubusercontent.com/72614349/110154006-fa268580-7da0-11eb-950d-d6f48de48b53.png)
+![image](https://github.com/AustinCaudill/laredo-dashboard-example/blob/main/screenshot.png)
