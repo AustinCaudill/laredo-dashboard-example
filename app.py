@@ -33,14 +33,17 @@ from controls import COUNTIES, WELL_STATUSES, WELL_TYPES, WELL_COLORS
 PATH = pathlib.Path(__file__).parent
 DATA_PATH = PATH.joinpath("data").resolve()
 
-external_stylesheets = [dbc.themes.SUPERHERO] # Change theme here. Must be in all-caps
+external_stylesheets = [dbc.themes.BOOTSTRAP] # Change theme here. Must be in all-caps
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width"}],
     external_stylesheets=external_stylesheets,
 )
 
-load_figure_template("SUPERHERO")
+app.title = 'Laredo Dashboard Example'
+
+
+load_figure_template("BOOTSTRAP")
 
 server = app.server
 
@@ -328,7 +331,7 @@ def make_individual_figure(main_graph_hover):
                 name="Gas Produced (mcf)",
                 x=index,
                 y=gas,
-                line=dict(shape="spline", smoothing=2, width=1, color="#fac1b7"),
+                line=dict(shape="spline", smoothing=2, width=2, color="#F9ADA0"),
                 marker=dict(symbol="diamond-open"),
             ),
             dict(
@@ -337,7 +340,7 @@ def make_individual_figure(main_graph_hover):
                 name="Oil Produced (bbl)",
                 x=index,
                 y=oil,
-                line=dict(shape="spline", smoothing=2, width=1, color="#a9bb95"),
+                line=dict(shape="spline", smoothing=2, width=2, color="#3E9E2B"),
                 marker=dict(symbol="diamond-open"),
             ),
             dict(
@@ -346,7 +349,7 @@ def make_individual_figure(main_graph_hover):
                 name="Water Produced (bbl)",
                 x=index,
                 y=water,
-                line=dict(shape="spline", smoothing=2, width=1, color="#92d8d8"),
+                line=dict(shape="spline", smoothing=2, width=2, color="#003AFF"),
                 marker=dict(symbol="diamond-open"),
             ),
         ]
@@ -399,7 +402,7 @@ def make_aggregate_figure(well_statuses, well_types, year_slider, main_graph_hov
             name="Oil Produced (bbl)",
             x=index,
             y=oil,
-            line=dict(shape="spline", smoothing="2", color="#849E68"),
+            line=dict(shape="spline", smoothing="2", color="#3E9E2B"),
         ),
         dict(
             type="scatter",
@@ -407,7 +410,7 @@ def make_aggregate_figure(well_statuses, well_types, year_slider, main_graph_hov
             name="Water Produced (bbl)",
             x=index,
             y=water,
-            line=dict(shape="spline", smoothing="2", color="#59C3C3"),
+            line=dict(shape="spline", smoothing="2", color="#003AFF"),
         ),
     ]
     layout_aggregate["title"] = "Aggregate: " + WELL_TYPES[well_type]
@@ -450,7 +453,7 @@ def make_pie_figure(well_statuses, well_types, year_slider):
             hoverinfo="text+value+percent",
             textinfo="label+percent+name",
             hole=0.5,
-            marker=dict(colors=["#fac1b7", "#a9bb95", "#92d8d8"]),
+            marker=dict(colors=["#DA2700", "#3E9E2B", "#92d8d8"]),
             domain={"x": [0, 0.45], "y": [0.2, 0.8]},
         ),
         dict(
